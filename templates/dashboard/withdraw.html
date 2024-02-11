@@ -8,34 +8,74 @@
    <div id="content-page" class="content-page">
       <div class="container-fluid">
          
+         <!-- Withdraw Funds Form -->
+         <section class="sign-in-page">
+            <div class="container">
+               <div class="row justify-content-center align-items-center height-self-center">
+                  <div class="align-self-center col-md-12 col-lg-7 form-padding">
+                        <div class="sign-user_card ">
+                           <div class="sign-in-page-data">
+                              <div class="sign-in-from w-100 m-auto">
+                                    <h3 class="mb-3 text-center">Withdraw Funds</h3>
+                                    <form class="row" method="post" enctype="multipart/form-data">
+                                       {% csrf_token %}
+                                       <div class="form-group col-md-6">
+                                          <label for="id_account_type">Account Type</label>
+                                          {{ form.account_type }}
+                                       </div>
+                                       <div class="form-group col-md-6">
+                                          <label for="id_amount">Amount</label>
+                                          {{ form.amount }}
+                                       </div>
+                                       <div class="form-group col-md-6">
+                                          <label for="id_wallet_address">Wallet Address</label>
+                                          {{ form.wallet_address }}
+                                       </div>
+                                       <div class="form-group col-md-6 sign-info">
+                                          <button type="submit" class="btn btn-primary">Withdraw</button>
+                                       </div>
+                                    </form>
+                              </div>
+                           </div>
+                        </div>
+                  </div>
+               </div>
+            </div>
+         </section>
+         <!-- Withdraw Funds END -->
+
+
+         <!-- Withdrawal History -->
          <div class="row">
             <div class="col-sm-12">
-               <h3 class="mb-3">Withdraw</h3>
-            </div>
-            <div class="col-lg-4">
-               <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
+               <div class="iq-card">
                   <div class="iq-card-body">
-                     <h4 class="card-title">Special title treatment</h4>
-                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                     <a href="#" class="btn btn-primary btn-block">Go somewhere</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 text-center">
-               <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
-                  <div class="iq-card-body">
-                     <h4 class="card-title">Special title treatment</h4>
-                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                     <a href="#" class="btn btn-primary btn-block">Go somewhere</a>
-                  </div>
-               </div>
-            </div>
-            <div class="col-lg-4 text-right">
-               <div class="iq-card iq-card-block iq-card-stretch iq-card-height iq-mb-3">
-                  <div class="iq-card-body">
-                     <h4 class="card-title">Special title treatment</h4>
-                     <p class="card-text">With supporting text below as a natural lead-in to additional content.</p>
-                     <a href="#" class="btn btn-primary btn-block">Go somewhere</a>
+                     {% if user_withdrawals %}
+                        <div class="table-responsive">
+                           <table class="data-tables table movie_table" style="width:100%">
+                              <thead>
+                                 <tr>
+                                    <th>Amount</th>
+                                    <th>Status</th>
+                                    <th>Date Requested</th>
+                                    <th>Date Approved/Declined</th>
+                                 </tr>
+                              </thead>
+                              <tbody>
+                                 {% for withdrawal in user_withdrawals %}
+                                    <tr>
+                                       <td>{{ withdrawal.amount }}</td>
+                                       <td>{{ withdrawal.status }}</td>
+                                       <td>{{ withdrawal.created_at }}</td>
+                                       <td>{{ withdrawal.updated_at }}</td>
+                                    </tr>
+                                 {% endfor %}
+                              </tbody>
+                           </table>
+                        </div>
+                     {% else %}
+                        <p>No withdrawals made by you yet.</p>
+                     {% endif %}
                   </div>
                </div>
             </div>

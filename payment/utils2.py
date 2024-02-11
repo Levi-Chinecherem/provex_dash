@@ -104,6 +104,9 @@ def update_account_summary(user, account_type, amount):
     # Try to get an existing summary for the user and account_type
     summary, created = AccountSummary.objects.get_or_create(user=user, account_type=account_type)
 
+    # Convert amount to an integer before comparison
+    amount = int(amount)
+    
     if created or amount > 0:
         # Update the existing summary if created or amount is greater than 0
         summary.total_amount = funds_total - amount  # Deduct the invested amount

@@ -6,10 +6,6 @@ from django.conf.urls.static import static
 urlpatterns = [
     path('dashboard/', views.dashboard_view, name='dashboard'),
     path('investment/', views.investment_view, name='investment'),
-    path('faq/', views.faq_view, name='faq'),
-    path('withdrawal/', views.withdrawal_view, name='withdrawal'),
-    path('about/', views.about_view, name='about'),
-    path('withdraw/', views.withdraw_view, name='withdraw'),
 ]
 
 if settings.DEBUG:

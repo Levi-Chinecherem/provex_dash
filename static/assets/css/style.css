@@ -173,7 +173,7 @@ Sign In
 -----------------------------------------------------------------------*/
 #sign-in-page-box { background: #fff; border-radius: 10px; position: relative; width: 100%; min-height: 480px; height: 93vh; margin: 15px auto; box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); -webkit-box-shadow: 0px 4px 20px 0px rgba(44, 101, 144, 0.1); }
 .sign-in-detail { color: var(--iq-white); }
-.sign-in-page { height: 100vh; position: relative; background: url(../images/login/login.jpg)  no-repeat scroll 0 0; background-size: cover; }
+.sign-in-page { height: 100vh; position: relative; background: url('')  no-repeat scroll 0 0; background-size: cover; }
 .sign-in-page .height-self-center { height: 100vh; border-radius: 15px; }
 .sign-in-page-data { border-radius: 15px; }
 .sign-in-detail { padding: 50px 80px; }

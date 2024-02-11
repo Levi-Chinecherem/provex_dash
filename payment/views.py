@@ -1,10 +1,38 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from django.contrib.auth.decorators import login_required
 from .utils import *
-from .models import Funds, AccountSummary
+from .models import Funds, AccountSummary, Withdrawal
 from decimal import Decimal
 from django.contrib import messages
 from .utils2 import handle_basic_investment, handle_standard_investment, handle_platinum_investment, handle_premium_investment
+from .forms import WithdrawalForm
+
+def withdraw_view(request):
+    user_withdrawals = Withdrawal.objects.filter(user=request.user)
+    
+    if request.method == 'POST':
+        form = WithdrawalForm(request.POST)
+        if form.is_valid():
+            account_type = form.cleaned_data['account_type']
+            amount = form.cleaned_data['amount']
+            wallet_address = form.cleaned_data['wallet_address']
+
+            withdrawal = Withdrawal.objects.create(
+                user=request.user,
+                account_type=account_type,
+                amount=amount,
+                wallet_address=wallet_address,
+            )
+
+            return redirect('withdraw')
+    else:
+        form = WithdrawalForm()
+
+    context = {
+        'user_withdrawals': user_withdrawals,
+        'form': form,
+    }
+    return render(request, 'dashboard/withdraw.html', context)
 
 
 @login_required

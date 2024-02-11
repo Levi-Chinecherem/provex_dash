@@ -1,6 +1,6 @@
 # payment/admin.py
 from django.contrib import admin
-from .models import AccountSummary, Funds, USDT_TRC20, USDT_ERC20, BTC, InvestmentPlan, Interest
+from .models import AccountSummary, Funds, USDT_TRC20, USDT_ERC20, BTC, InvestmentPlan, Interest, Withdrawal
 
 # Set custom titles and headers
 admin.site.site_header = 'PROVEX HOMES ADMINISTRATION'
@@ -67,3 +67,10 @@ class InterestAdmin(admin.ModelAdmin):
     search_fields = ('investment_plan__plan_type', 'investment_plan__user__username')
     list_filter = ('investment_plan__plan_type', 'start_date', 'end_date')
     readonly_fields = ('start_date', 'end_date', 'percentage_return', 'monetary_return', 'total_amount')
+class WithdrawalAdmin(admin.ModelAdmin):
+    list_display = ('user', 'account_type', 'amount', 'status', 'created_at', 'updated_at')
+    list_filter = ('status', 'created_at', 'updated_at')
+    search_fields = ('user__username', 'amount', 'status')
+    date_hierarchy = 'created_at'
+
+admin.site.register(Withdrawal, WithdrawalAdmin)

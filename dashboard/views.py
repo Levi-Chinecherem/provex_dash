@@ -73,15 +73,3 @@ def investment_view(request):
     }
 
     return render(request, 'dashboard/investments.html', context)
-
-def faq_view(request):
-    return render(request, 'dashboard/faq.html')
-
-def withdrawal_view(request):
-    return render(request, 'dashboard/withdrawal.html')
-
-def about_view(request):
-    return render(request, 'dashboard/about.html')
-
-def withdraw_view(request):
-    return render(request, 'dashboard/withdraw.html')
