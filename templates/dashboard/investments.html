@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+   <!-- Page Content  -->
+   <div id="content-page" class="content-page">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="iq-card">
+                  <div class="iq-card-header d-flex justify-content-between">
+                     <div class="iq-header-title">
+                        <h4 class="card-title">Your Investments</h4>
+                     </div>
+                  </div>
+               
+                  <!-- Investment Details -->
+                  <div class="row">
+                     <div class="col-sm-12">
+                        <div class="iq-card">
+                           <div class="iq-card-body">
+                              <div class="table-responsive">
+                                 <table class="data-tables table movie_table" style="width:100%">
+                                    <thead>
+                                       <tr>
+                                          <th>Plan Type</th>
+                                          <th>ROI Percentage</th>
+                                          <th>Affine Space Duration</th>
+                                          <th>Investment Duration</th>
+                                          <th>Amount</th>
+                                          <th>Start Date</th>
+                                          <th>End Date</th>
+                                          <th>Percentage Return</th>
+                                          <th>Monetary Return</th>
+                                          <th>Total Amount</th>
+                                       </tr>
+                                    </thead>
+                                    <tbody>
+                                       {% for investment in investment_details %}
+                                          <tr>
+                                             <td>{{ investment.plan_type }}</td>
+                                             <td>{{ investment.roi_percentage }}</td>
+                                             <td>{{ investment.affine_space_duration }}</td>
+                                             <td>{{ investment.investment_duration }}</td>
+                                             <td>{{ investment.amount }}</td>
+                                             <td>{{ investment.start_date }}</td>
+                                             <td>{{ investment.end_date }}</td>
+                                             <td>{{ investment.percentage_return }}</td>
+                                             <td>{{ investment.monetary_return }}</td>
+                                             <td>{{ investment.total_amount }}</td>
+                                          </tr>
+                                       {% endfor %}
+                                    </tbody>
+                                 </table>
+                              </div>
+                           </div>
+                        </div>
+                     </div>
+                  </div>
+
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+
+   <!-- Add this script to the end of your HTML body -->
+<script>
+   $(document).ready( function () {
+     $('.data-tables').DataTable({
+       "paging": true,         // Enable pagination
+       "ordering": true,       // Enable sorting
+       "info": true,           // Show table information
+       "searching": true,      // Enable search bar
+       "lengthMenu": [10, 25, 50, 100],  // Set page length options
+       "pageLength": 10        // Set default page length
+     });
+   });
+ </script>
+ 
+{% endblock %}

@@ -1,0 +1,473 @@
+
+{% extends 'static/base_s.html' %}
+{% load static %}
+
+{% block title %}Property List{% endblock %}
+
+{% block content %}
+
+
+        <!-- Property List Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="row g-0 gx-5 align-items-end">
+                    
+                    <div class="col-lg-6">
+                        <div class="text-start mx-auto mb-5 wow slideInLeft" data-wow-delay="0.1s">
+                            <h1 class="mb-3">Property Listing</h1>
+                            <p>Exclusive Luxurious Apartments for sale.</p>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 text-start text-lg-end wow slideInRight" data-wow-delay="0.1s">
+                        <ul class="nav nav-pills d-inline-flex justify-content-end mb-5">
+                            <li class="nav-item me-2">
+                                <a class="btn btn-outline-primary active" data-bs-toggle="pill" href="#tab-1">Featured</a>
+                            </li>
+                            <li class="nav-item me-2">
+                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-2">For Sell</a>
+                            </li>
+                            <li class="nav-item me-0">
+                                <a class="btn btn-outline-primary" data-bs-toggle="pill" href="#tab-3">For Rent</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="tab-content">
+                    <div id="tab-1" class="tab-pane fade show p-0 active">
+                        <div class="row g-4">
+                              
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="position-relative overflow-hidden">
+                                    <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-1.jpg' %}" alt=""></a>
+                                    <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                    <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Luxury Flat</div>
+                                </div>
+                                <div class="p-4 pb-0">
+                                    <h5 class="text-primary mb-3">£750,000</h5>
+                                    <a class="d-block h5 mb-2" href="{% url 'assets' %}">Regal Residence</a>
+                                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i>456 Park Lane, London, UK</p>
+                                </div>
+                                <div class="d-flex border-top">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1200 Sqft</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>4 Bed</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>3 Bath</small>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                            <div class="property-item rounded overflow-hidden">
+                                <div class="position-relative overflow-hidden">
+                                    <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-2.jpg' %}" alt=""></a>
+                                    <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                    <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Spacious Villa</div>
+                                </div>
+                                <div class="p-4 pb-0">
+                                    <h5 class="text-primary mb-3">£2,500 / month</h5>
+                                    <a class="d-block h5 mb-2" href="{% url 'assets' %}">Serenity Gardens</a>
+                                    <p><i class="fa fa-map-marker-alt text-primary me-2"></i>789 High Street, Manchester, UK</p>
+                                </div>
+                                <div class="d-flex border-top">
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1800 Sqft</small>
+                                    <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>5 Bed</small>
+                                    <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>4 Bath</small>
+                                </div>
+                            </div>
+                        </div>
+
+                            <!-- Property 3 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-3.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Commercial Space</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£500,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Metro Plaza</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>101 Business Avenue, Birmingham, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>—</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>—</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property 4 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-4.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Eco-Friendly House</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£1,200,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Green Living Residence</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>567 Nature Street, Bristol, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1500 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>4 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>3 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property 5 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-5.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Modern Home</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£2,000 / month</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Cityscape Living</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>789 Urban Avenue, Liverpool, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1200 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property 6 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-6.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Premium Retail Space</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£1,500,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Urban Marketplace</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>876 High Street, Newcastle, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2500 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>—</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>—</small>
+                                    </div>
+                                </div>
+                            </div>
+                    
+                            <div class="col-12 text-center wow fadeInUp" data-wow-delay="0.1s">
+                                <a class="btn btn-primary py-3 px-5" href="{% url 'assets' %}">Browse More Property</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Property Tab 2 Start -->
+                    <div id="tab-2" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+
+                                <!-- Property 3 -->
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-3.jpg' %}" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Commercial Space</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">£500,000</h5>
+                                            <a class="d-block h5 mb-2" href="{% url 'assets' %}">Metro Plaza</a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>101 Business Avenue, Birmingham, UK</p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2000 Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>—</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>—</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property 4 -->
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-4.jpg' %}" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Eco-Friendly House</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">£1,200,000</h5>
+                                            <a class="d-block h5 mb-2" href="{% url 'assets' %}">Green Living Residence</a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>567 Nature Street, Bristol, UK</p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1500 Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>4 Bed</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>3 Bath</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property 5 -->
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-5.jpg' %}" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Modern Home</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">£2,000 / month</h5>
+                                            <a class="d-block h5 mb-2" href="{% url 'assets' %}">Cityscape Living</a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>789 Urban Avenue, Liverpool, UK</p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1200 Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <!-- Property 6 -->
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-6.jpg' %}" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Premium Retail Space</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">£1,500,000</h5>
+                                            <a class="d-block h5 mb-2" href="{% url 'assets' %}">Urban Marketplace</a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>876 High Street, Newcastle, UK</p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2500 Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>—</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>—</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-1.jpg' %}" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Luxury Flat</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">£750,000</h5>
+                                            <a class="d-block h5 mb-2" href="{% url 'assets' %}">Regal Residence</a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>456 Park Lane, London, UK</p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1200 Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>4 Bed</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>3 Bath</small>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                    <div class="property-item rounded overflow-hidden">
+                                        <div class="position-relative overflow-hidden">
+                                            <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-2.jpg' %}" alt=""></a>
+                                            <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                            <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Spacious Villa</div>
+                                        </div>
+                                        <div class="p-4 pb-0">
+                                            <h5 class="text-primary mb-3">£2,500 / month</h5>
+                                            <a class="d-block h5 mb-2" href="{% url 'assets' %}">Serenity Gardens</a>
+                                            <p><i class="fa fa-map-marker-alt text-primary me-2"></i>789 High Street, Manchester, UK</p>
+                                        </div>
+                                        <div class="d-flex border-top">
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1800 Sqft</small>
+                                            <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>5 Bed</small>
+                                            <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>4 Bath</small>
+                                        </div>
+                                    </div>
+                                </div>
+
+                            <div class="col-12 text-center">
+                                <a class="btn btn-primary py-3 px-5" href="">Browse More Property</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Property Tab 2 End -->
+
+
+                    <!-- Property Start -->
+                    <div id="tab-3" class="tab-pane fade show p-0">
+                        <div class="row g-4">
+                            
+                            <!-- Property 5 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-5.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Modern Home</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£2,000 / month</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Cityscape Living</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>789 Urban Avenue, Liverpool, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1200 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>3 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>2 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property 6 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-6.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Premium Retail Space</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£1,500,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Urban Marketplace</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>876 High Street, Newcastle, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2500 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>—</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>—</small>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-1.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Luxury Flat</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£750,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Regal Residence</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>456 Park Lane, London, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1200 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>4 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>3 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-2.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Spacious Villa</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£2,500 / month</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Serenity Gardens</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>789 High Street, Manchester, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1800 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>5 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>4 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property 3 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-3.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Rent</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Commercial Space</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£500,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Metro Plaza</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>101 Business Avenue, Birmingham, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>2000 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>—</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>—</small>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <!-- Property 4 -->
+                            <div class="col-lg-4 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                                <div class="property-item rounded overflow-hidden">
+                                    <div class="position-relative overflow-hidden">
+                                        <a href="{% url 'assets' %}"><img class="img-fluid" src="{% static 'img/property-4.jpg' %}" alt=""></a>
+                                        <div class="bg-primary rounded text-white position-absolute start-0 top-0 m-4 py-1 px-3">For Sell</div>
+                                        <div class="bg-white rounded-top text-primary position-absolute start-0 bottom-0 mx-4 pt-1 px-3">Eco-Friendly House</div>
+                                    </div>
+                                    <div class="p-4 pb-0">
+                                        <h5 class="text-primary mb-3">£1,200,000</h5>
+                                        <a class="d-block h5 mb-2" href="{% url 'assets' %}">Green Living Residence</a>
+                                        <p><i class="fa fa-map-marker-alt text-primary me-2"></i>567 Nature Street, Bristol, UK</p>
+                                    </div>
+                                    <div class="d-flex border-top">
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-ruler-combined text-primary me-2"></i>1500 Sqft</small>
+                                        <small class="flex-fill text-center border-end py-2"><i class="fa fa-bed text-primary me-2"></i>4 Bed</small>
+                                        <small class="flex-fill text-center py-2"><i class="fa fa-bath text-primary me-2"></i>3 Bath</small>
+                                    </div>
+                                </div>
+                            </div>
+                 
+                            <div class="col-12 text-center">
+                                <a class="btn btn-primary py-3 px-5" href="{% url 'assets' %}">Browse More Property</a>
+                            </div>
+                        </div>
+                    </div>
+                    <!-- Property End -->
+              
+
+                </div>
+            </div>
+        </div>
+        <!-- Property List End -->
+
+
+        <!-- Call to Action Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="bg-light rounded p-3">
+                    <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                        <div class="row g-5 align-items-center">
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                                <img class="img-fluid rounded w-100" src="{% static 'img/call-to-action.jpg' %}" alt="Contact Our Certified Agent">
+                            </div>
+                            <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                                <div class="mb-4">
+                                    <h1 class="mb-3">Connect with Our Expert Real Estate Agent</h1>
+                                    <p>Explore your real estate opportunities with our certified agents. We are dedicated to providing personalized guidance for your property needs.</p>
+                                </div>
+                                <a href="#" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Call Our Agent</a>
+                                <a href="#" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Schedule Appointment</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Call to Action End -->
+        
+{% endblock content %}

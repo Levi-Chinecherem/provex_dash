@@ -1,0 +1,144 @@
+
+{% extends "base.html" %}
+{% load static %}
+
+{% block content %}
+
+   <!-- Page Content  -->
+   <div id="content-page" class="content-page">
+      <div class="container-fluid">
+         <div class="row">
+            <div class="col-sm-12">
+               <div class="iq-card">
+                  <div class="iq-card-body">
+                     <div class="table-responsive pricing pt-2">
+                        <table id="my-table" class="table">
+                           <thead>
+                              <tr>
+                                 <th class="text-center prc-wrap"></th>
+                                 <th class="text-center prc-wrap">
+                                    <div class="prc-box">
+                                       <div class="h3 pt-4 text-white">€1999 - €30000</div>
+                                       <span class="type">Basic</span>
+                                    </div>
+                                 </th>
+                                 <th class="text-center prc-wrap">
+                                    <div class="prc-box active">
+                                       <div class="h3 pt-4 text-white">€40000 - €60000</div>
+                                       <span class="type">Standard</span>
+                                    </div>
+                                 </th>
+                                 <th class="text-center prc-wrap">
+                                    <div class="prc-box">
+                                       <div class="h3 pt-4 text-white">€70000 - €90000</div>
+                                       <span class="type">Platinum</span>
+                                    </div>
+                                 </th>
+                                 <th class="text-center prc-wrap">
+                                    <div class="prc-box">
+                                       <div class="h3 pt-4 text-white">€100000 - €UNLIMITED</div>
+                                       <span class="type">Premium</span>
+                                    </div>
+                                 </th>
+                              </tr>
+                           </thead>
+                           <tbody>
+                              <tr>
+                                 <th class="text-center" scope="row">ROI</th>
+                                 <td class="text-center child-cell">1.16%</td>
+                                 <td class="text-center child-cell active">0.45%</td>
+                                 <td class="text-center child-cell">0.45%</td>
+                                 <td class="text-center child-cell">0.50%</td>
+                              </tr>
+                              <tr>
+                                 <th class="text-center" scope="row">AFFINE SPACE</th>
+                                 <td class="text-center child-cell">48HRS</td>
+                                 <td class="text-center child-cell active">48HRS</td>
+                                 <td class="text-center child-cell">48HRS</td>
+                                 <td class="text-center child-cell">48HRS</td>
+                              </tr>
+                              <tr>
+                                 <th class="text-center" scope="row">DURATION</th>
+                                 <td class="text-center child-cell">3 MONTHS</td>
+                                 <td class="text-center child-cell active">3 MONTHS</td>
+                                 <td class="text-center child-cell">3 MONTHS</td>
+                                 <td class="text-center child-cell">3 MONTHS</td>
+                              </tr>
+                              <tr>
+                                 <td class="text-center"><i class="ri-close-line i_close"></i></td>
+                                 <td class="text-center">
+                                       <form id="basicInvestForm" action="{% url 'pricing' %}" method="post">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="plan_type" value="basic">
+                                          <input type="hidden" name="roi" value="1.16%">
+                                          <input type="hidden" name="affine_space" value="48HRS">
+                                          <input type="hidden" name="duration" value="3 MONTHS">
+                                          <input type="number" name="amount" placeholder="Enter Amount" class="form-control mt-2">
+                                          <select name="account_type" class="form-select mt-2">
+                                             <option value="USDT_TRC20">USDT TRC20</option>
+                                             <option value="USDT_ERC20">USDT ERC20</option>
+                                             <option value="BTC">BTC</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary mt-3">Invest</button>
+                                       </form>
+                                 </td>
+                                 <td class="text-center">
+                                       <form id="standardInvestForm" action="{% url 'pricing' %}" method="post">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="plan_type" value="standard">
+                                          <input type="hidden" name="roi" value="0.45%">
+                                          <input type="hidden" name="affine_space" value="48HRS">
+                                          <input type="hidden" name="duration" value="3 MONTHS">
+                                          <input type="number" name="amount" placeholder="Enter Amount" class="form-control mt-2">
+                                          <select name="account_type" class="form-select mt-2">
+                                             <option value="USDT_TRC20">USDT TRC20</option>
+                                             <option value="USDT_ERC20">USDT ERC20</option>
+                                             <option value="BTC">BTC</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary mt-3">Invest</button>
+                                       </form>
+                                 </td>
+                                 <td class="text-center">
+                                       <form id="platinumInvestForm" action="{% url 'pricing' %}" method="post">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="plan_type" value="platinum">
+                                          <input type="hidden" name="roi" value="0.45%"> <!-- Replace with actual Platinum ROI -->
+                                          <input type="hidden" name="affine_space" value="48HRS"> <!-- Replace with actual Platinum Affine Space -->
+                                          <input type="hidden" name="duration" value="3 MONTHS"> <!-- Replace with actual Platinum Duration -->
+                                          <input type="number" name="amount" placeholder="Enter Amount" class="form-control mt-2">
+                                          <select name="account_type" class="form-select mt-2">
+                                             <option value="USDT_TRC20">USDT TRC20</option>
+                                             <option value="USDT_ERC20">USDT ERC20</option>
+                                             <option value="BTC">BTC</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary mt-3">Invest</button>
+                                       </form>
+                                 </td>
+                                 <td class="text-center">
+                                       <form id="premiumInvestForm" action="{% url 'pricing' %}" method="post">
+                                          {% csrf_token %}
+                                          <input type="hidden" name="plan_type" value="premium">
+                                          <input type="hidden" name="roi" value="0.50%"> <!-- Replace with actual Premium ROI -->
+                                          <input type="hidden" name="affine_space" value="48HRS"> <!-- Replace with actual Premium Affine Space -->
+                                          <input type="hidden" name="duration" value="3 MONTHS"> <!-- Replace with actual Premium Duration -->
+                                          <input type="number" name="amount" placeholder="Enter Amount" class="form-control mt-2">
+                                          <select name="account_type" class="form-select mt-2">
+                                             <option value="USDT_TRC20">USDT TRC20</option>
+                                             <option value="USDT_ERC20">USDT ERC20</option>
+                                             <option value="BTC">BTC</option>
+                                          </select>
+                                          <button type="submit" class="btn btn-primary mt-3">Invest</button>
+                                       </form>
+                                 </td>
+                              </tr>
+                           </tbody>
+                        </table>
+                     </div>
+                  </div>
+               </div>
+            </div>
+         </div>
+      </div>
+   </div>
+     
+{% endblock %}

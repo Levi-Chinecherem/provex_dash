@@ -1,0 +1,103 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <section class="service-section">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card iq-mb-3 text-white bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ latest_usdt_trc20.coin_name }}</h5>
+                                <p class="card-text">{{ latest_usdt_trc20.wallet_address }}</p>
+                                <p class="card-text">Network: {{ latest_usdt_trc20.network }}</p>
+                                <button class="btn btn-outline-dark btn-sm copy-address" data-address="{{ latest_usdt_trc20.wallet_address }}">Copy</button>
+                            </div>
+                            <div class="card-footer text-center">
+                                <img src="{{ latest_usdt_trc20.qr_code.url }}" alt="QRCode" width="180" height="auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card iq-mb-3 text-white bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ latest_usdt_erc20.coin_name }}</h5>
+                                <p class="card-text">{{ latest_usdt_erc20.wallet_address }}</p>
+                                <p class="card-text">Network: {{ latest_usdt_erc20.network }}</p>
+                                <button class="btn btn-outline-dark btn-sm copy-address" data-address="{{ latest_usdt_erc20.wallet_address }}">Copy</button>
+                            </div>
+                            <div class="card-footer text-center">
+                                <img src="{{ latest_usdt_erc20.qr_code.url }}" alt="QRCode" width="180" height="auto">
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card iq-mb-3 text-white bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title">{{ latest_btc.coin_name }}</h5>
+                                <p class="card-text">{{ latest_btc.wallet_address }}</p>
+                                <p class="card-text">Network: {{ latest_btc.network }}</p>
+                                <button class="btn btn-outline-dark btn-sm copy-address" data-address="{{ latest_btc.wallet_address }}">Copy</button>
+                            </div>
+                            <div class="card-footer text-center">
+                                <img src="{{ latest_btc.qr_code.url }}" alt="QRCode" width="180" height="auto">
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="service-section-footer mt-4">
+                <p>Choose any payment address you wish to use and make payment</p>
+            </div>
+        </section>
+        
+        
+
+        <div class="container mt-4">
+            <form method="POST" action="{% url 'fund' %}" style="max-width: 700px; margin: 0 auto;">
+                <div class="transfer-section-header">
+                    <h2 class="mb-3">Fund Wallet</h2>
+                </div>
+                {% csrf_token %}
+                <div class="faq">
+                    <p>Enter the exact amount you want to fund your wallet with, and the wallet you wish to fund with (BTC, USDT), don't put the wrong amount to avoid loss of funds. Your account will be updated upon confirmation</p>
+                    <div class="mb-3">
+                    <label for="amount" class="form-label">Amount</label>
+                    <input type="text" name="amount" class="form-control" id="amount" placeholder="Type here">
+                    </div>
+                    <div class="mb-3">
+                    <label for="accountType" class="form-label">Wallet</label>
+                    <select name="account_type" class="form-select" id="accountType">
+                        <option value="USDT_TRC20">USDT TRC20</option>
+                        <option value="USDT_ERC20">USDT ERC20</option>
+                        <option value="BTC">BTC</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="payment-section-footer">
+                    <button class="btn btn-primary w-100" type="submit">Fund</button>
+                </div>
+            </form>
+        </div>
+    </div><br>
+</div>
+
+<script>
+   document.querySelectorAll('.copy-address').forEach(function (button) {
+      button.addEventListener('click', function () {
+         const walletAddress = this.getAttribute('data-address');
+         navigator.clipboard.writeText(walletAddress);
+         tippy(this, {
+            content: 'Wallet Address Copied!',
+            trigger: 'manual',
+            placement: 'top',
+         }).show();
+         setTimeout(function () {
+            tippy(this).hide();
+         }, 2000);
+      });
+   });
+</script>
+{% endblock content %}

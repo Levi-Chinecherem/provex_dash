@@ -1,0 +1,110 @@
+
+{% extends 'static/base_s.html' %}
+{% load static %}
+
+{% block title %}Property Agents{% endblock %}
+
+{% block content %}
+
+<!-- Team Start -->
+{% comment %} <div class="container-xxl py-5">
+    <div class="container">
+        <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+            <h1 class="mb-3">Meet Our Expert Property Agents</h1>
+            <p>Our team of skilled and dedicated property experts is here to assist you in finding your dream home or selling your property with ease.</p>
+        </div>
+        <div class="row g-4">
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.1s">
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/team-2.jpg' %}" alt="Agent 1">
+                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 mt-3">
+                        <h5 class="fw-bold mb-0">John Parker</h5>
+                        <small>Senior Real Estate Agent</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.3s">
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/team-1.jpg' %}" alt="Agent 2">
+                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 mt-3">
+                        <h5 class="fw-bold mb-0">Emily Hayes</h5>
+                        <small>Property Consultant</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/team-4.jpg' %}" alt="Agent 3">
+                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 mt-3">
+                        <h5 class="fw-bold mb-0">Daniel Turner</h5>
+                        <small>Real Estate Advisor</small>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.7s">
+                <div class="team-item rounded overflow-hidden">
+                    <div class="position-relative">
+                        <img class="img-fluid" src="{% static 'img/team-3.jpg' %}" alt="Agent 4">
+                        <div class="position-absolute start-50 top-100 translate-middle d-flex align-items-center">
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-facebook-f"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-twitter"></i></a>
+                            <a class="btn btn-square mx-1" href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                    <div class="text-center p-4 mt-3">
+                        <h5 class="fw-bold mb-0">Sophia Rodriguez</h5>
+                        <small>Property Specialist</small>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div> {% endcomment %}
+<!-- Team End -->
+
+<!-- Call to Action Start -->
+<div class="container-xxl py-5">
+    <div class="container">
+        <div class="bg-light rounded p-3">
+            <div class="bg-white rounded p-4" style="border: 1px dashed rgba(0, 185, 142, .3)">
+                <div class="row g-5 align-items-center">
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.1s">
+                        <img class="img-fluid rounded w-100" src="{% static 'img/call-to-action.jpg' %}" alt="Contact Our Certified Agent">
+                    </div>
+                    <div class="col-lg-6 wow fadeIn" data-wow-delay="0.5s">
+                        <div class="mb-4">
+                            <h1 class="mb-3">Connect with Our Expert Real Estate Agent</h1>
+                            <p>Explore your real estate opportunities with our certified agents. We are dedicated to providing personalized guidance for your property needs.</p>
+                        </div>
+                        <a href="#" class="btn btn-primary py-3 px-4 me-2"><i class="fa fa-phone-alt me-2"></i>Call Our Agent</a>
+                        <a href="#" class="btn btn-dark py-3 px-4"><i class="fa fa-calendar-alt me-2"></i>Schedule Appointment</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- Call to Action End -->
+
+{% endblock content %}

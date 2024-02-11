@@ -1,0 +1,54 @@
+{% comment %} don't touch {% endcomment %}
+<div class="app-body-sidebar container-md">
+    <section class="payment-section">
+        <h2>Balance</h2>
+        <div class="payment-section-header">
+        </div>
+        <div class="payments">
+            <div class="payment">
+                <div class="card olive">
+                    <span>BTC</span>
+                    <span>
+                        •••• {{ btc_last_digits }}
+                    </span>
+                </div>
+                <div class="payment-details">
+                    <h3>Bitcoin Balance</h3>
+                    <div>
+                        <span>${{ btc_balance }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="payment">
+                <div class="card green">
+                    <span>TRC20</span>
+                    <span>
+                        •••• {{ usdt_trc20_last_digits }}
+                    </span>
+                </div>
+                <div class="payment-details">
+                    <h3>USDT Balance</h3>
+                    <div>
+                        <span>${{ usdt_trc20_balance }}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="payment">
+                <div class="card gray">
+                    <span>ERC20</span>
+                    <span>
+                        •••• {{ usdt_erc20_last_digits }}
+                    </span>
+                </div>
+                <div class="payment-details">
+                    <h3>USDT Balance</h3>
+                    <div>
+                        <span>${{ usdt_erc20_balance }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        {% include 'chunks/faq.html' %}
+    </section>
+</div>

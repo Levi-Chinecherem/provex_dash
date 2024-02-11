@@ -1,0 +1,58 @@
+
+{% extends 'static/base_s.html' %}
+{% load static %}
+
+{% block title %}Testimonisl{% endblock %}
+
+{% block content %}
+
+        <!-- Testimonial Start -->
+        <div class="container-xxl py-5">
+            <div class="container">
+                <div class="text-center mx-auto mb-5 wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <h1 class="mb-3">What Our Clients Say!</h1>
+                    <p>Discover what our valued clients have to say about their experiences with our real estate services.</p>
+                </div>
+                <div class="owl-carousel testimonial-carousel wow fadeInUp" data-wow-delay="0.1s">
+                    <div class="testimonial-item bg-light rounded p-3">
+                        <div class="bg-white border rounded p-4">
+                            <p>"Working with this team was a game-changer for me. Their dedication and expertise made the entire process smooth and stress-free."</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-1.jpg' %}" style="width: 45px; height: 45px;">
+                                <div class="ps-3">
+                                    <h6 class="fw-bold mb-1">Sarah Johnson</h6>
+                                    <small>Business Owner</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded p-3">
+                        <div class="bg-white border rounded p-4">
+                            <p>"Exceptional service! The team went above and beyond to find the perfect property for me. I highly recommend their expertise."</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-2.jpg' %}" style="width: 45px; height: 45px;">
+                                <div class="ps-3">
+                                    <h6 class="fw-bold mb-1">Michael Anderson</h6>
+                                    <small>Software Engineer</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="testimonial-item bg-light rounded p-3">
+                        <div class="bg-white border rounded p-4">
+                            <p>"Professionalism at its best! The team guided me through every step, ensuring a seamless transaction. I'm grateful for their expertise."</p>
+                            <div class="d-flex align-items-center">
+                                <img class="img-fluid flex-shrink-0 rounded" src="{% static 'img/testimonial-3.jpg' %}" style="width: 45px; height: 45px;">
+                                <div class="ps-3">
+                                    <h6 class="fw-bold mb-1">David Miller</h6>
+                                    <small>Marketing Specialist</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- Testimonial End -->
+        
+{% endblock content %}

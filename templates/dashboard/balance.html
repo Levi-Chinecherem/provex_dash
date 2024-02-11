@@ -1,0 +1,42 @@
+<!-- dashboard/templates/dashboard/balance.html -->
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<div id="content-page" class="content-page">
+    <div class="container-fluid">
+        <section class="service-section">
+            <div class="container mt-4">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="card iq-mb-3 text-white bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title">USDT TRC20 Balance</h5>
+                                <p class="card-text">Total Amount: {{ usdt_trc20_summary.total_amount }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card iq-mb-3 text-white bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title">USDT ERC20 Balance</h5>
+                                <p class="card-text">Total Amount: {{ usdt_erc20_summary.total_amount }}</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="card iq-mb-3 text-white bg-secondary">
+                            <div class="card-body">
+                                <h5 class="card-title">BTC Balance</h5>
+                                <p class="card-text">Total Amount: {{ btc_summary.total_amount }}</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        
+      
+    </div><br>
+</div>
+{% endblock content %}

@@ -1,5 +1,6 @@
 <!doctype html>
 <html lang="en">
+{% load static %}
 <head>
     <!-- Required meta tags -->
     <meta charset="utf-8">
@@ -31,8 +32,7 @@
       <!-- Sidebar-->
         <div class="iq-sidebar">
             <div class="iq-sidebar-logo d-flex justify-content-between">
-                <a href="{% url 'index' %}" class="header-logo">
-                    <img src="{% static 'assets/images/logo.png' %}" class="img-fluid rounded-normal" alt="">
+                <a href="{% url 'dashboard' %}" class="header-logo">
                     <div class="logo-title">
                         <span class="text-primary text-uppercase">Provex Homes</span>
                     </div>
@@ -48,32 +48,35 @@
             <div id="sidebar-scrollbar">
                 <nav class="iq-sidebar-menu">
                     <ul id="iq-sidebar-toggle" class="iq-menu">
-                        <li><a href="{% url 'index' %}" class="text-primary"><i class="ri-arrow-right-line"></i><span>Visit site</span></a></li>
-                        <li class="{% if request.path == '/index/' %}active active-menu{% endif %}">
-                            <a href="{% url 'index' %}" class="iq-waves-effect"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a>
+                        <li class="{% if request.path == '/dashboard/' %}active active-menu{% endif %}">
+                            <a href="{% url 'dashboard' %}" class="iq-waves-effect"><i class="las la-home iq-arrow-left"></i><span>Dashboard</span></a>
                         </li>
-                        <li class="{% if request.path == '/user/' %}active active-menu{% endif %}">
-                            <a href="{% url 'user' %}" class="iq-waves-effect"><i class="las la-user-friends"></i><span>User</span></a>
+                        <li class="{% if request.path == '/investment/' %}active active-menu{% endif %}">
+                            <a href="{% url 'investment' %}" class="iq-waves-effect"><i class="ri-lightbulb-line"></i><span>Investments</span></a>
                         </li>
-                        <li class="{% if request.path == '/pages-pricing/' %}active active-menu{% endif %}">
-                            <a href="{% url 'pages-pricing' %}" class="iq-waves-effect"><i class="ri-price-tag-line"></i><span>Pricing</span></a>
+                        <li class="{% if request.path == '/pricing/' %}active active-menu{% endif %}">
+                            <a href="{% url 'pricing' %}" class="iq-waves-effect"><i class="ri-price-tag-line"></i><span>Pricing/Invest</span></a>
                         </li>
-                        <li class="{% if request.path == '/ui-cards/' %}active active-menu{% endif %}">
-                            <a href="{% url 'ui-cards' %}" class="iq-waves-effect"><i class="las la-credit-card"></i><span>Cards</span></a>
+                        <li class="{% if request.path == '/fund/' %}active active-menu{% endif %}">
+                            <a href="{% url 'fund' %}" class="iq-waves-effect"><i class="las la-credit-card"></i><span>Fund+</span></a>
                         </li>
-                        <li class="{% if request.path == '/sign-in/' %}active active-menu{% endif %}">
-                            <a href="{% url 'sign-in' %}" class="iq-waves-effect"><i class="las la-sign-in-alt"></i><span>Login</span></a>
+                        <li class="{% if request.path == '/balance/' %}active active-menu{% endif %}">
+                            <a href="{% url 'balance' %}" class="iq-waves-effect"><i class="ri-compasses-line"></i><span>Balance</span></a>
                         </li>
-                        <li class="{% if request.path == '/sign-up/' %}active active-menu{% endif %}">
-                            <a href="{% url 'sign-up' %}" class="iq-waves-effect"><i class="ri-login-circle-line"></i><span>Register</span></a>
+                        <li class="{% if request.path == '/withdraw/' %}active active-menu{% endif %}">
+                            <a href="{% url 'withdraw' %}" class="iq-waves-effect"><i class="ri-login-circle-line"></i><span>Withdraw</span></a>
                         </li>
-                        <li class="{% if request.path == '/pages-lock-screen/' %}active active-menu{% endif %}">
-                            <a href="{% url 'pages-lock-screen' %}" class="iq-waves-effect"><i class="ri-lock-line"></i><span>Lock Screen</span></a>
+                        <li class="{% if request.path == '/profile/' %}active active-menu{% endif %}">
+                            <a href="{% url 'profile' %}" class="iq-waves-effect"><i class="las la-user-friends"></i><span>Profile</span></a>
                         </li>
-                        <li class="{% if request.path == '/pages-faq/' %}active active-menu{% endif %}">
-                            <a href="{% url 'pages-faq' %}" class="iq-waves-effect"><i class="ri-compasses-line"></i><span>Faq</span></a>
+                        <li class="{% if request.path == '/lock_screen/' %}active active-menu{% endif %}">
+                            <a href="{% url 'lock_screen' %}" class="iq-waves-effect"><i class="ri-lock-line"></i><span>Lock Screen</span></a>
                         </li>
                     </ul>
+                    <div class="d-inline-block w-100 text-center p-3">
+                        <a class="bg-primary iq-sign-btn" href="{% url 'logout' %}" role="button">Sign
+                            out<i class="ri-login-box-line ml-2"></i></a>
+                    </div>
                 </nav>
             </div>
         </div>
@@ -87,10 +90,9 @@
                             <div class="main-circle"><i class="las la-bars"></i></div>
                         </div>
                         <div class="iq-navbar-logo d-flex justify-content-between">
-                            <a href="{% url 'index' %}" class="header-logo">
-                                <img src="{% static 'assets/images/logo.png' %}" class="img-fluid rounded-normal" alt="">
+                            <a href="{% url 'dashboard' %}" class="header-logo">
                                 <div class="logo-title">
-                                    <span class="text-primary text-uppercase">Streamit</span>
+                                    <span class="text-primary text-uppercase">Provex Homes</span>
                                 </div>
                             </a>
                         </div>
@@ -110,14 +112,35 @@
                         <ul class="navbar-nav ml-auto navbar-list">
                             <li class="line-height pt-3">
                                 <a href="#" class="search-toggle iq-waves-effect d-flex align-items-center">
-                                    <img src="{% static 'assets/images/user/1.jpg' %}" class="img-fluid rounded-circle mr-3"
-                                        alt="user">
+                                    {% if user.is_authenticated %}
+                                    {% if user.image %}
+                                    <img src="{{ user.image.url }}" class="img-fluid rounded-circle mr-3" alt="user">
+                                    {% else %}
+                                        <img src="{% static 'assets/images/user/1.jpg' %}" class="img-fluid rounded-circle mr-3" alt="user">
+                                    {% endif %}
+                                    {% else %}
+                                        <img src="{% static 'assets/images/user/1.jpg' %}" class="img-fluid rounded-circle mr-3" alt="user">
+                                    {% endif %}
+
+
                                 </a>
                                 <div class="iq-sub-dropdown iq-user-dropdown">
                                     <div class="iq-card shadow-none m-0">
                                         <div class="iq-card-body p-0 ">
                                             <div class="bg-primary p-3">
-                                                <h5 class="mb-0 text-white line-height">Hello Barry Tech</h5>
+                                                {% if user.is_authenticated %}
+                                                
+                                                {% if user.first_name %}
+                                                <h5 class="mb-0 text-white line-height">Hello {{ user.last_name }} {{ user.first_name }}</h5>
+                                                {% else %}
+                                                <h5 class="mb-0 text-white line-height">Hello Guest</h5>
+                                                    
+                                                {% endif %}
+                                                    
+                                                {% else %}
+                                                    <h5 class="mb-0 text-white line-height">Hello Guest</h5>
+                                                {% endif %}
+
                                                 <span class="text-white font-size-12">Available</span>
                                             </div>
                                             <a href="{% url 'profile' %}" class="iq-sub-card iq-bg-primary-hover">
@@ -131,19 +154,19 @@
                                                     </div>
                                                 </div>
                                             </a>
-                                            <a href="{% url 'profile-edit' %}" class="iq-sub-card iq-bg-primary-hover">
+                                            <a href="{% url 'change_password' %}" class="iq-sub-card iq-bg-primary-hover">
                                                 <div class="media align-items-center">
                                                     <div class="rounded iq-card-icon iq-bg-primary">
                                                         <i class="ri-profile-line"></i>
                                                     </div>
                                                     <div class="media-body ml-3">
                                                         <h6 class="mb-0 ">Change Password</h6>
-                                                        <p class="mb-0 font-size-12">Modify your personal details.</p>
+                                                        <p class="mb-0 font-size-12">Modify your password.</p>
                                                     </div>
                                                 </div>
                                             </a>
                                             <div class="d-inline-block w-100 text-center p-3">
-                                                <a class="bg-primary iq-sign-btn" href="{% url 'sign-in' %}" role="button">Sign
+                                                <a class="bg-primary iq-sign-btn" href="{% url 'logout' %}" role="button">Sign
                                                     out<i class="ri-login-box-line ml-2"></i></a>
                                             </div>
                                         </div>
@@ -163,12 +186,15 @@
         {% endblock %}
       <!-- content ends -->
 
+    </div>
+    <!-- Wrapper END -->
+    
     <!-- Footer -->
-    <footer class="iq-footer">
+    <footer class="iq-footer ">
         <div class="container-fluid">
             <div class="row">
                 <div class="col-lg-6 text-right">
-                    Copyright 2020 <a href="#">Streamit</a> All Rights Reserved.
+                    Copyright 2020 <a href="#">Provex Homes</a> All Rights Reserved.
                 </div>
             </div>
         </div>
@@ -206,6 +232,7 @@
 <script src="{% static 'assets/js/chart-custom.js' %}"></script>
 <!-- Custom JavaScript -->
 <script src="{% static 'assets/js/custom.js' %}"></script>
+
 
 </body>
 </html>

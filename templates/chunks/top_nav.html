@@ -1,0 +1,49 @@
+<!-- top nav -->
+<header class="app-header">
+    <div class="app-header-logo">
+        <div class="logo">
+            <h1 class="logo-title">
+                <span>PROVEX</span>
+                <span> HOMES</span>
+            </h1>
+        </div>
+    </div>
+    <div class="app-header-navigation">
+        <div class="tabs">
+            <a href="{% url 'dashboard' %}">
+                Overview
+            </a>
+            <a href="{% url 'investments' %}">
+                Investments
+            </a>
+            <a href="{% url 'other_assets' %}">
+                Other Assets
+            </a>
+            <a href="{% url 'profile' %}">
+                Account
+            </a>
+        </div>
+    </div>
+
+    <div class="app-header-actions">
+        <button class="user-profile">
+            <span>{{ request.user.username }}</span>
+            <span>
+                <img src="https://i1.wp.com/www.essexyachtclub.co.uk/wp-content/uploads/2019/03/person-placeholder-portrait.png?fit=500%2C500&ssl=1" style="max-width: 80px;"/>
+            </span>
+        </button>
+        <div class="app-header-actions-buttons">
+            <button class="icon-button large">
+                <i class="fas fa-search"></i>
+            </button>
+            <button class="icon-button large">
+                <i class="fas fa-bell"></i>
+            </button>
+        </div>
+    </div>
+    <div class="app-header-mobile">
+        <button class="icon-button large">
+            <i class="fas fa-list"></i>
+        </button>
+    </div>
+</header>
