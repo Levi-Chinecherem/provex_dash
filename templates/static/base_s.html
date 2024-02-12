@@ -59,11 +59,14 @@
                         <a href="{% url 'contact' %}" class="nav-item nav-link text-white-50">Contact</a>
                         <a href="{% url 'agent' %}" class="nav-item nav-link text-white-50">Agents</a>
                         <a href="{% url 'testimonial' %}" class="nav-item nav-link text-white-50">Testimonial</a>
-                        <a href="{% url 'login' %}" class="nav-item nav-link text-white-50">Login</a>
+                        {% if user.is_authenticated %}
+                            <a href="{% url 'dashboard' %}" class="nav-item nav-link text-white-50">Dashboard</a>
+                        {% else %}
+                            <a href="{% url 'signup' %}" class="nav-item nav-link text-white-50">Signup</a>
+                            <a href="{% url 'login' %}" class="nav-item nav-link text-white-50">Login</a>
+                        {% endif %}
                     </div>
-                    {% if user.is_authenticated %}
-                        <a href="{% url 'dashboard' %}" class="btn btn-primary px-3 d-none d-lg-flex">Dashboard</a>
-                    {% endif %}
+                   
                 </div>
             </nav>
         </div>

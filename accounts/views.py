@@ -32,7 +32,7 @@ def signup_view(request):
         )
 
         login(request, user)
-        return redirect('profile')
+        return redirect('dashboard')
 
     return render(request, 'registration/signup.html')
 
@@ -49,7 +49,7 @@ def custom_login_view(request):
             # Log in the user
             login(request, user)
             messages.success(request, "Login successful.")
-            return redirect('profile')
+            return redirect('dashboard')
         else:
             # If authentication fails, add an error message
             messages.error(request, "Invalid username or password.")
