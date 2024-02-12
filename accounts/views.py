@@ -17,16 +17,19 @@ def signup_view(request):
         email = request.POST['email']
         password = request.POST['password']
         image = request.FILES.get('image')
-        job = request.POST.get('job')
-        about_you = request.POST.get('about_you')
+        phone_number = request.POST.get('phone_number')
+
+        # Check if the email is already in use
+        if CustomUser.objects.filter(email=email).exists():
+            messages.error(request, 'This email is already in use. Please try another email.')
+            return render(request, 'registration/signup_error.html')
 
         user = CustomUser.objects.create_user(
             username=username,
             email=email,
             password=password,
             image=image,
-            job=job,
-            about_you=about_you,
+            phone_number=phone_number,
             first_name=request.POST['firstname'],  # Automatically sets first name
             last_name=request.POST['lastname']  # Automatically sets last name
         )

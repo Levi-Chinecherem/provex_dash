@@ -1,69 +1,62 @@
 {% extends 'auth_base.html' %}
 {% load static %}
 
-
 {% block content %}
-
-        <!-- Sign in Start -->
-        <section class="sign-in-page">
-         <div class="container">
+    <!-- Sign up Start -->
+    <section class="sign-in-page">
+        <div class="container">
             <div class="row justify-content-center align-items-center height-self-center">
-               <div class=" align-self-center col-md-12 col-lg-7 form-padding">
-                  <div class="sign-user_card ">                    
-                     <div class="sign-in-page-data">
-                        <div class="sign-in-from w-100 m-auto">
-                           <h3 class="mb-3 text-center">Sign Up</h3>
-                           <form class="row" method="post" enctype="multipart/form-data">
-                              {% csrf_token %} 
-                              <div class="form-group col-md-6">                                 
-                                 <label for="exampleInputEmailImage">Image</label>
-                                 <input type="file" name="image" class="form-control mb-0 btn-border" id="exampleInputEmailImage" placeholder="Select Image" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6">                                 
-                                 <label for="exampleInputEmail2">Username</label>
-                                 <input type="text" name="username" class="form-control mb-0 btn-border" id="exampleInputEmail2" placeholder="Enter Full Name" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6">                                 
-                                 <label for="exampleInputEmailJob">Job</label>
-                                 <input type="text" name="job" class="form-control mb-0 btn-border" id="exampleInputEmailJob" placeholder="Occupation" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6">                                 
-                                 <label for="exampleInputEmailAbout">About You</label>
-                                 <input type="text" name="about_you" class="form-control mb-0 btn-border" id="exampleInputEmailAbout" placeholder="Description of You" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6">                                 
-                                 <label for="exampleInputEmail3">E-mail</label>
-                                 <input type="email" name="email" class="form-control mb-0 btn-border" id="exampleInputEmail3" placeholder="Enter email" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6">                                 
-                                 <label for="exampleInputEmail4">First Name</label>
-                                 <input type="text" name="firstname" class="form-control mb-0 btn-border" id="exampleInputEmail4" placeholder="First Name" autocomplete="off" required>             
-                              </div>  
-                              <div class="form-group col-md-6">
-                                 <label for="exampleInputEmail5">Last Name</label>
-                                 <input type="text" name="lastname" class="form-control mb-0 btn-border" id="exampleInputEmail5" placeholder="Last Name" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6">
-                                 <label for="exampleInputEmail6">Password</label>
-                                 <input type="password" name="password" class="form-control mb-0 btn-border" id="exampleInputEmail6" placeholder="Password" autocomplete="off" required>             
-                              </div>
-                              <div class="form-group col-md-6 sign-info">
-                                    <button type="submit" class="btn btn-primary">Sign Up</button>                               
-                                 </div> 
-                           </form>
-                     </div>    
-                     <div class="mt-3">
-                        <div class="d-flex justify-content-center links">
-                           Already have an account? <a href="{% url 'login' %}" class="text-primary ml-2">Sign In</a>
-                        </div>                        
-                     </div>
-                  </div>
-               </div>
+                <div class="align-self-center col-md-12 col-lg-7 form-padding">
+                    <div class="sign-user_card ">
+                        <div class="sign-in-page-data">
+                            <div class="sign-in-from w-100 m-auto">
+                                <h3 class="mb-3 text-center">Sign Up</h3>
+                                <form class="row" method="post" enctype="multipart/form-data">
+                                    {% csrf_token %}
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmailImage">Image</label>
+                                        <input type="file" name="image" class="form-control mb-0 btn-border" id="exampleInputEmailImage" placeholder="Select Image" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail2">Username</label>
+                                        <input type="text" name="username" class="form-control mb-0 btn-border" id="exampleInputEmail2" placeholder="Enter Full Name" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail3">E-mail</label>
+                                        <input type="email" name="email" class="form-control mb-0 btn-border" id="exampleInputEmail3" placeholder="Enter email" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmailPhone">Phone Number</label>
+                                        <input type="tel" name="phone_number" class="form-control mb-0 btn-border" id="exampleInputEmailPhone" placeholder="Enter Phone Number" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail4">First Name</label>
+                                        <input type="text" name="firstname" class="form-control mb-0 btn-border" id="exampleInputEmail4" placeholder="First Name" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail5">Last Name</label>
+                                        <input type="text" name="lastname" class="form-control mb-0 btn-border" id="exampleInputEmail5" placeholder="Last Name" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="exampleInputEmail6">Password</label>
+                                        <input type="password" name="password" class="form-control mb-0 btn-border" id="exampleInputEmail6" placeholder="Password" autocomplete="off" required>
+                                    </div>
+                                    <div class="form-group col-md-6 sign-info">
+                                        <button type="submit" class="btn btn-primary">Sign Up</button>
+                                    </div>
+                                </form>
+                            </div>
+                            <div class="mt-3">
+                                <div class="d-flex justify-content-center links">
+                                    Already have an account? <a href="{% url 'login' %}" class="text-primary ml-2">Sign In</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
             </div>
-            <!-- Sign in END -->
-            <!-- color-customizer -->
-         </div>
-      </section>
-        <!-- Sign in END -->
-             
+            <!-- Sign up END -->
+        </div>
+    </section>
+    <!-- Sign up END -->
 {% endblock %}

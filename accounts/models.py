@@ -5,10 +5,7 @@ from .managers import CustomUserManager
 
 class CustomUser(AbstractUser):
     image = models.ImageField(upload_to='profile_images/', null=True, blank=True)
-    job = models.CharField(max_length=100, null=True, blank=True)
-    about_you = models.TextField(null=True, blank=True)
-
-    # Make email unique and required
+    phone_number = models.CharField(max_length=20, null=True, blank=True, help_text='Include country code')
     email = models.EmailField(unique=True)
 
     objects = CustomUserManager()
